@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SpaceX"
+    }
+  },
+  "defaultProject": "SpaceX",
+  "cli": {
+    "analytics": false
+  }
 }
