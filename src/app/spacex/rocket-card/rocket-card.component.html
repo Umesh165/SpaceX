@@ -23,9 +23,12 @@
       <p class="rocketLaunchDataKey">Successfull Launch :</p>
       <p class="rocketLaunchDataValue">{{ rocketLaunch.launch_success }}</p>
     </section>
-    <!-- <section class="launchData">
-        <p>Successfull Landing :</p>
-        <p>{{ rocketLaunch.launch_success }}</p>
-      </section> -->
+
+    <section class="launchData" *ngIf="rocketLaunch.rocket">
+      <p class="rocketLaunchDataKey">Successfull Landing :</p>
+      <p class="rocketLaunchDataValue">
+        {{ rocketLaunch.rocket.first_stage.cores[0].land_success }}
+      </p>
+    </section>
   </section>
 </section>

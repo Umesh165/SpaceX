@@ -4,7 +4,7 @@
     <hr />
     <section class="filterButtons">
       <app-button
-        [filter]="'launch_year'"
+        [filter]="'&launch_year'"
         (getFilteredData)="getFilteredData.emit($event, $event)"
         class="buttonContainer"
         *ngFor="let year of launchYears"
@@ -17,7 +17,7 @@
     <hr />
     <section class="filterButtons">
       <app-button
-        [filter]="'launch_success'"
+        [filter]="'&launch_success'"
         (getFilteredData)="getFilteredData.emit($event)"
         class="buttonContainer"
         *ngFor="let status of successfullLaunch"
@@ -30,7 +30,7 @@
     <hr />
     <section class="filterButtons">
       <app-button
-        [filter]="'land_success'"
+        [filter]="'&land_success'"
         (getFilteredData)="getFilteredData.emit($event)"
         class="buttonContainer"
         *ngFor="let status of successfullLanding"
