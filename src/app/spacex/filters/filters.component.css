@@ -1,0 +1,30 @@
+.filterButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+.filterContainer {
+  width: 30vh;
+  background-color: white;
+  padding-top: 1vh;
+  margin: 1vh;
+  border-radius: 10px;
+}
+
+p {
+  text-align: center;
+  font-size: 2vh;
+  margin-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  width: 70%;
+}
+
+.buttonContainer {
+  padding-left: 1vh;
+}

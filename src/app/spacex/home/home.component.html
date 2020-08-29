@@ -1,1 +1,4 @@
-<app-rocket-list [rocketLaunchData$]="rocketLaunchData$"></app-rocket-list>
+<section class="mainContainer">
+  <app-filters (getFilteredData)="getFilteredData($event)"></app-filters>
+  <app-rocket-list [rocketLaunchData$]="rocketLaunchData$"></app-rocket-list>
+</section>

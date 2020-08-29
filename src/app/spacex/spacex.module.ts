@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RocketListComponent } from './rocket-list/rocket-list.component';
 import { RocketCardComponent } from './rocket-card/rocket-card.component';
 import { HomeComponent } from './home/home.component';
+import { FiltersComponent } from './filters/filters.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
-  declarations: [RocketListComponent, RocketCardComponent, HomeComponent],
+  declarations: [RocketListComponent, RocketCardComponent, HomeComponent, FiltersComponent, ButtonComponent],
   imports: [CommonModule],
   exports: [HomeComponent],
 })

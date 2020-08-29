@@ -1,0 +1,41 @@
+<section class="filterContainer">
+  <section class="launchYearContainer">
+    <p>Launch Year</p>
+    <hr />
+    <section class="filterButtons">
+      <app-button
+        [filter]="'launch_year'"
+        (getFilteredData)="getFilteredData.emit($event, $event)"
+        class="buttonContainer"
+        *ngFor="let year of launchYears"
+        [value]="year"
+      ></app-button>
+    </section>
+  </section>
+  <section class="successfullLaunch">
+    <p>Successfull Launch</p>
+    <hr />
+    <section class="filterButtons">
+      <app-button
+        [filter]="'launch_success'"
+        (getFilteredData)="getFilteredData.emit($event)"
+        class="buttonContainer"
+        *ngFor="let status of successfullLaunch"
+        [value]="status"
+      ></app-button>
+    </section>
+  </section>
+  <section class="successfullLanding">
+    <p>Successfull Landing</p>
+    <hr />
+    <section class="filterButtons">
+      <app-button
+        [filter]="'land_success'"
+        (getFilteredData)="getFilteredData.emit($event)"
+        class="buttonContainer"
+        *ngFor="let status of successfullLanding"
+        [value]="status"
+      ></app-button>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,6 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 88%;
+  margin: 0 auto;
+}

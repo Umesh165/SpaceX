@@ -8,7 +8,13 @@ import { Observable } from 'rxjs';
 export class RocketsService {
   constructor(private http: HttpClient) {}
 
+  url = 'https://api.spaceXdata.com/v3/launches?limit=100';
+
   getRocketLaunchData(): Observable<any> {
-    return this.http.get('https://api.spaceXdata.com/v3/launches?limit=100');
+    return this.http.get(this.url);
+  }
+
+  getRocketLaunchFilteredData(filter: string): Observable<any> {
+    return this.http.get(this.url + filter);
   }
 }
