@@ -19,5 +19,5 @@ export class HomeComponent implements OnInit {
     this.rocketLaunchData$ = this.rocketsService.getRocketLaunchFilteredData(
       data
     );
-  };
+  }
 }

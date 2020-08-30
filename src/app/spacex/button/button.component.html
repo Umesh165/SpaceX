@@ -1,3 +1,6 @@
-<button class="button" (click)="filterData()">
+<button
+  [ngClass]="[selected ? 'button-selected' : 'button-normal']"
+  (click)="filterData()"
+>
   {{ value }}
 </button>

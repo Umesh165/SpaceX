@@ -8,7 +8,8 @@
         (getFilteredData)="getFilteredData.emit($event, $event)"
         class="buttonContainer"
         *ngFor="let year of launchYears"
-        [value]="year"
+        [value]="year.value"
+        [selected]="year.selected"
       ></app-button>
     </section>
   </section>
@@ -21,7 +22,8 @@
         (getFilteredData)="getFilteredData.emit($event)"
         class="buttonContainer"
         *ngFor="let status of successfullLaunch"
-        [value]="status"
+        [value]="status.value"
+        [selected]="status.selected"
       ></app-button>
     </section>
   </section>
@@ -34,7 +36,8 @@
         (getFilteredData)="getFilteredData.emit($event)"
         class="buttonContainer"
         *ngFor="let status of successfullLanding"
-        [value]="status"
+        [value]="status.value"
+        [selected]="status.selected"
       ></app-button>
     </section>
   </section>
