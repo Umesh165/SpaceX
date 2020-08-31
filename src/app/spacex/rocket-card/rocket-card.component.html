@@ -1,7 +1,4 @@
-<section
-  class="cardContainer"
-  *ngIf="rocketLaunch['links'].mission_patch_small"
->
+<section *ngIf="rocketLaunch['links'].mission_patch_small">
   <section class="cardImageContainer">
     <img src="{{ rocketLaunch['links'].mission_patch_small }}" />
   </section>
@@ -26,7 +23,7 @@
 
     <section class="launchData" *ngIf="rocketLaunch.rocket">
       <p class="rocketLaunchDataKey">Successfull Landing :</p>
-      <p class="rocketLaunchDataValue">
+      <p>
         {{ rocketLaunch.rocket.first_stage.cores[0].land_success }}
       </p>
     </section>
