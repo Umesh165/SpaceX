@@ -4,7 +4,7 @@ import {
   successfullLanding,
 } from './../../assets/filtersData';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({

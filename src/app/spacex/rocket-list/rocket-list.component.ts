@@ -1,3 +1,4 @@
+import { RocketsService } from './../../Services/rockets.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,5 +12,7 @@ export class RocketListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.rocketLaunchData$);
+  }
 }

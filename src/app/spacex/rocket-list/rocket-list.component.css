@@ -4,3 +4,11 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
+
+/* .loadingContainer {
+} */
+
+h1 {
+  display: grid;
+  color: gray;
+}

@@ -17,3 +17,9 @@ h1 {
   width: 88%;
   margin: 0 auto;
 }
+
+.loadingText {
+  width: 100%;
+  text-align: center;
+  color: gray;
+}
