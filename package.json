@@ -13,7 +13,8 @@
     "build:ssr": "ng build --prod && ng run SpaceX:server:production",
     "prerender": "ng run SpaceX:prerender",
     "start:heroku": "node dist/server",
-    "postinstall": "npm run build:ssr"
+    "postinstall": "npm run build:ssr",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
