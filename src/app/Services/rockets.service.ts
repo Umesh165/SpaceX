@@ -66,6 +66,7 @@ export class RocketsService {
           this.launchSuccess + this.landSuccess + this.launchYear;
       }
     }
+    console.log(this.url + this.filterString);
     return this.http.get(this.url + this.filterString);
   }
 

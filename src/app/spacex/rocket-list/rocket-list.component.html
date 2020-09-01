@@ -1,7 +1,8 @@
-<section class="rocketListContainer">
+<section class="rocketListContainer" *ngIf="!isEmpty">
   <app-rocket-card
     class="cardContainer"
     [rocketLaunch]="rocketLaunch"
-    *ngFor="let rocketLaunch of rocketLaunchData$ | async"
-  ></app-rocket-card>
+    *ngFor="let rocketLaunch of rocketLaunchData"
+  >
+  </app-rocket-card>
 </section>

@@ -1,9 +1,14 @@
-<section class="mainHeading"><h1>SpaceX Launch Programs</h1></section>
+<Header class="mainHeading"><h1>SpaceX Launch Programs</h1></Header>
 <section class="mainContainer">
   <app-filters (getFilteredData)="getFilteredData($event)"></app-filters>
   <h1 class="loadingText" *ngIf="isFetching">Loading...</h1>
+  <h1 class="noRecordText" *ngIf="isEmpty">No record found...</h1>
+  <h1 class="serverErrorText" *ngIf="errors">
+    Interval server error. Please try again later...
+  </h1>
   <app-rocket-list
-    [rocketLaunchData$]="rocketLaunchData$"
+    [rocketLaunchData]="rocketLaunchData"
     *ngIf="!isFetching"
+    [isEmpty]="isEmpty"
   ></app-rocket-list>
 </section>

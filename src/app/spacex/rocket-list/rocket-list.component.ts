@@ -8,11 +8,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rocket-list.component.css'],
 })
 export class RocketListComponent implements OnInit {
-  @Input() rocketLaunchData$: Observable<any>;
+  @Input() rocketLaunchData: [];
+  @Input() isEmpty: boolean;
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.rocketLaunchData$);
+    console.log(this.rocketLaunchData);
   }
 }

@@ -1,6 +1,13 @@
-<section *ngIf="rocketLaunch['links'].mission_patch_small">
+<section *ngIf="rocketLaunch.flight_number">
   <section class="cardImageContainer">
-    <img src="{{ rocketLaunch['links'].mission_patch_small }}" />
+    <img
+      *ngIf="rocketLaunch['links'].mission_patch_small"
+      src="{{ rocketLaunch['links'].mission_patch_small }}"
+    />
+    <div
+      class="noImage"
+      *ngIf="!rocketLaunch['links'].mission_patch_small"
+    ></div>
   </section>
   <section class="cardDataContainer">
     <p class="rocketName">
@@ -23,9 +30,12 @@
 
     <section class="launchData" *ngIf="rocketLaunch.rocket">
       <p class="rocketLaunchDataKey">Successfull Landing :</p>
-      <p>
+      <p class="rocketLaunchDataValue">
         {{ rocketLaunch.rocket.first_stage.cores[0].land_success }}
       </p>
     </section>
   </section>
+</section>
+<section *ngIf="!rocketLaunch">
+  <h1>No record found...</h1>
 </section>
