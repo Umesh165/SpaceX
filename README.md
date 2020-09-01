@@ -28,11 +28,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #Approach Used
 
-I have used one module named as spacex and multiple components to build this webapp.
+There is one module named as spacex.
+
+There are 5 components:
+
+1. Home - This is the main component which have all the other components. And also in the home component I am calling the api's from service.
+2. RocketList - This component gets the data from the home and uses ngFor to pass each item to rocketCard component.
+3. RocketCard - This component gets each item from the rocketList and displays the card.
+4. Filters - This component is the main container for the filters. This component cals for the button component also by passing the data required for button like button content and the function it should invoke after clicked.
+5. Button - This component displays the button on the filter part. It get the data from the filter component.
 
 Also using services to fetch the data from api.
 
-I've made interface in models folder which specifies the type of data coming from api.
+In service there are two main methods which are used to get the data from api.
 
-In service there are two main methods which are used to get the data from api. 1. getRocketLaunchData() - This method gets the data without any filters which should be display on the starting.
-<!-- 2. getRocketLaunchDataFilteredData() - This method gets th  -->
+1. getRocketLaunchData() - This method gets the data without any filters which should be display on the starting.
+2. getRocketLaunchDataFilteredData() - This method gets the filtered data by using the data it get as argument and used this data to add in the url.
+
+I've made interface in models folder which specifies the type of data coming from api.

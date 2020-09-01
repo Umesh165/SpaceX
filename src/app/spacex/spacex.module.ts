@@ -15,16 +15,7 @@ import { RouterModule } from '@angular/router';
     FiltersComponent,
     ButtonComponent,
   ],
-  imports: [
-    CommonModule,
-    // RouterModule.forRoot([
-    //   {
-    //     path: '',
-    //     component: HomeComponent,
-    //   },
-    //   { path: 'filter', component: HomeComponent },
-    // ]),
-  ],
+  imports: [CommonModule],
   exports: [HomeComponent],
 })
 export class SpacexModule {}

@@ -1,13 +1,9 @@
 <section *ngIf="rocketLaunch.flight_number">
   <section class="cardImageContainer">
     <img
-      *ngIf="rocketLaunch['links'].mission_patch_small"
+      alt="rocket patch"
       src="{{ rocketLaunch['links'].mission_patch_small }}"
     />
-    <div
-      class="noImage"
-      *ngIf="!rocketLaunch['links'].mission_patch_small"
-    ></div>
   </section>
   <section class="cardDataContainer">
     <p class="rocketName">
