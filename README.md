@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+#Approach Used
+
+I have used one module named as spacex and multiple components to build this webapp.
+
+Also using services to fetch the data from api.
+
+I've made interface in models folder which specifies the type of data coming from api.
+
+In service there are two main methods which are used to get the data from api. 1. getRocketLaunchData() - This method gets the data without any filters which should be display on the starting.
+<!-- 2. getRocketLaunchDataFilteredData() - This method gets th  -->
