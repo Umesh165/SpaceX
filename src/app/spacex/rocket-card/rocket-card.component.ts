@@ -1,3 +1,4 @@
+import { IRocketLaunch } from './../../Models/rocketLaunch';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./rocket-card.component.css'],
 })
 export class RocketCardComponent implements OnInit {
-  @Input() rocketLaunch: any;
+  @Input() rocketLaunch: IRocketLaunch;
 
   constructor() {}
 

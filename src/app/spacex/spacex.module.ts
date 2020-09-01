@@ -5,10 +5,26 @@ import { RocketCardComponent } from './rocket-card/rocket-card.component';
 import { HomeComponent } from './home/home.component';
 import { FiltersComponent } from './filters/filters.component';
 import { ButtonComponent } from './button/button.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [RocketListComponent, RocketCardComponent, HomeComponent, FiltersComponent, ButtonComponent],
-  imports: [CommonModule],
+  declarations: [
+    RocketListComponent,
+    RocketCardComponent,
+    HomeComponent,
+    FiltersComponent,
+    ButtonComponent,
+  ],
+  imports: [
+    CommonModule,
+    // RouterModule.forRoot([
+    //   {
+    //     path: '',
+    //     component: HomeComponent,
+    //   },
+    //   { path: 'filter', component: HomeComponent },
+    // ]),
+  ],
   exports: [HomeComponent],
 })
 export class SpacexModule {}

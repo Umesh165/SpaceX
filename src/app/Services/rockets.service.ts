@@ -1,3 +1,5 @@
+import { filterUrlValue } from './../Models/filterUrlValue';
+import { IRocketLaunch } from './../Models/rocketLaunch';
 import {
   launchYears,
   successfullLaunch,
@@ -19,14 +21,13 @@ export class RocketsService {
 
   url = 'https://api.spaceXdata.com/v3/launches?limit=100';
 
-  getRocketLaunchData(): Observable<any> {
-    return this.http.get(this.url);
+  getRocketLaunchData(): Observable<IRocketLaunch[]> {
+    return this.http.get<IRocketLaunch[]>(this.url);
   }
 
-  getRocketLaunchFilteredData(data: {
-    filter: string;
-    value: string;
-  }): Observable<any> {
+  getRocketLaunchFilteredData(
+    data: filterUrlValue
+  ): Observable<IRocketLaunch[]> {
     if (data.filter === '&launch_year') {
       if (this.launchYear === data.filter + '=' + data.value) {
         this.filterString = this.filterString.replace(
@@ -67,10 +68,10 @@ export class RocketsService {
       }
     }
     console.log(this.url + this.filterString);
-    return this.http.get(this.url + this.filterString);
+    return this.http.get<IRocketLaunch[]>(this.url + this.filterString);
   }
 
-  setSelectedYear(year: string) {
+  setSelectedYear(year: string): boolean {
     let state: boolean;
     launchYears.forEach((item) => {
       if (item.value === year) {
@@ -83,7 +84,7 @@ export class RocketsService {
     return state;
   }
 
-  setLaunchSuccess(value: string) {
+  setLaunchSuccess(value: string): boolean {
     let state: boolean;
     successfullLaunch.forEach((item) => {
       if (item.value === value) {
@@ -96,7 +97,7 @@ export class RocketsService {
     return state;
   }
 
-  setLandSuccess(value: string) {
+  setLandSuccess(value: string): boolean {
     let state: boolean;
     successfullLanding.forEach((item) => {
       if (item.value === value) {

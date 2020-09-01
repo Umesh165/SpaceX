@@ -1,80 +1,52 @@
-@media (min-width: 1024px) {
-  .filterButtons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .filterContainer {
-    width: 30vh;
-    background-color: white;
-    padding-top: 1vh;
-    margin: 1vh;
-    border-radius: 10px;
-  }
-
-  p {
-    text-align: center;
-    font-size: 2vh;
-    margin-bottom: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  hr {
-    width: 70%;
-  }
-
-  .buttonContainer {
-    padding-left: 1vh;
-  }
+.filterContainer {
+  background-color: white;
+  padding-top: 1vh;
+  margin: 1vh;
+  border-radius: 10px;
 }
-@media (min-width: 100px) {
-  .filterContainer {
-    background-color: white;
-    padding-top: 1vh;
-    margin: 1vh;
-    border-radius: 10px;
-  }
-  .buttonContainer {
-    margin: 0 auto;
-  }
-  .filterButtons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: auto;
-  }
-  .buttonContainer {
-    padding-left: 1vh;
-  }
-  hr {
-    width: 70%;
-  }
-  p {
-    text-align: center;
-    font-size: 2vh;
-    margin-bottom: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.buttonContainer {
+  margin: 0 auto;
 }
-
-@media (min-width: 700px) {
-  .filterButtons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-wrap: wrap;
-    margin: auto;
-  }
-  .buttonContainer {
-    padding: 0;
-  }
+.filterButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  margin: auto;
 }
-
+.buttonContainer {
+  padding-left: 1vh;
+}
+hr {
+  width: 70%;
+}
+p {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 h2 {
   padding: 0;
   margin-left: 4vh;
   margin-top: 0;
   margin-bottom: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+@media (min-width: 1025px) {
+  .filterContainer {
+    width: 100%;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .buttonContainer {
+    padding: 0;
+  }
+  p {
+    font-size: 1.5rem;
+  }
 }

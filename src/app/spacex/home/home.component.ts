@@ -1,6 +1,7 @@
-import { async } from '@angular/core/testing';
+import { filterUrlValue } from './../../Models/filterUrlValue';
+import { IRocketLaunch } from './../../Models/rocketLaunch';
 import { RocketsService } from './../../Services/rockets.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -8,10 +9,10 @@ import { Observable, Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
-  rocketLaunchData: [];
+export class HomeComponent implements OnInit, OnDestroy {
+  rocketLaunchData: IRocketLaunch[];
   isFetching: boolean;
-  isEmpty: boolean = false;
+  isEmpty: boolean;
   subscribtion: Subscription;
   errors: boolean;
   constructor(private rocketsService: RocketsService) {}
@@ -21,10 +22,9 @@ export class HomeComponent implements OnInit {
     this.isEmpty = false;
     this.isFetching = true;
     this.subscribtion = this.rocketsService.getRocketLaunchData().subscribe(
-      (data) => {
+      (data: IRocketLaunch[]) => {
         this.rocketLaunchData = data;
-        if (this.rocketLaunchData.length === 0) {
-          console.log('true');
+        if (Object.keys(this.rocketLaunchData).length === 0) {
           this.isEmpty = true;
         }
         this.isFetching = false;
@@ -37,14 +37,15 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getFilteredData = (data: { filter: string; value: string }): void => {
+  getFilteredData = (data: filterUrlValue): void => {
     this.errors = false;
     this.isEmpty = false;
     this.isFetching = true;
     this.rocketsService.getRocketLaunchFilteredData(data).subscribe(
-      (data) => {
-        this.rocketLaunchData = data;
-        if (this.rocketLaunchData.length === 0) {
+      (filteredData: IRocketLaunch[]) => {
+        this.rocketLaunchData = filteredData;
+        console.log();
+        if (Object.keys(this.rocketLaunchData).length === 0) {
           this.isEmpty = true;
         }
         this.isFetching = false;
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
     );
   };
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscribtion.unsubscribe();
   }
 }
